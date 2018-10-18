@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<<<<<<< HEAD:src/sample/sample.fxml
 
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sample.Controller">
@@ -29,3 +30,8 @@
       </Pane>
    </children>
 </GridPane>
+=======
+<GridPane fx:controller="controller.IndexViewController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+</GridPane>
+>>>>>>> origin/master:src/view/sample.fxml
