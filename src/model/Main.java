@@ -1,5 +1,6 @@
 package model;
 
+import controller.IndexViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,7 +17,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
-        stage.setTitle("2018占星");
+        stage.setTitle("分析");
         stage.setResizable(false);
         goToIndexView(); // 调用进入首页
         stage.show();
@@ -25,7 +26,8 @@ public class Main extends Application {
     //进入首页
     public void goToIndexView() {
         try {
-
+            IndexViewController indexView = (IndexViewController) replaceSceneContent("../view/IndexView.fxml");
+            indexView.setApp(this);
         } catch(Exception e) {
             System.out.println(e);
         }

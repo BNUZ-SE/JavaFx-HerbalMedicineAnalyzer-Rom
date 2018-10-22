@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.IndexViewController">
+   <children>
+      <Text fill="#0abdff" layoutX="63.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="元素分析" wrappingWidth="122.98307228088379" />
+      <JFXButton layoutX="180.0" layoutY="96.0" ripplerFill="#2ee3ff" text="选择文件" />
+      <Text layoutX="21.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="...请选择文件" textAlignment="RIGHT" wrappingWidth="147.9830722808838" />
+      <JFXRadioButton layoutX="393.0" layoutY="101.0" style="-fx-font-size: 16;" text="欧氏距离">
+         <toggleGroup>
+            <ToggleGroup fx:id="methodGroup" />
+         </toggleGroup></JFXRadioButton>
+      <JFXRadioButton layoutX="504.0" layoutY="101.0" style="-fx-font-size: 16;" text="皮尔逊相关度系数" toggleGroup="$methodGroup" />
+      <JFXButton layoutX="783.0" layoutY="96.0" ripplerFill="#2cc0ff" text="开始分析" />
+      <JFXComboBox layoutX="691.0" layoutY="97.0" />
+      <LineChart layoutX="31.0" layoutY="144.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <PieChart layoutX="362.0" layoutY="128.0" />
+   </children>
+</AnchorPane>
