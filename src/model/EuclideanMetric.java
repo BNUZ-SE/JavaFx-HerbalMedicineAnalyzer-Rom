@@ -10,20 +10,30 @@ public class EuclideanMetric {
      * @param v2
      * @return 两点间距离
      */
-    public String sim_distance(double[] v1, double[] v2) {
+    public String sim_distance(double[][]num,int n) {
         double distance = 0;
-
-        if (v1.length == v2.length) {
-            for (int i = 0; i < v1.length; i++) {
-                double temp = Math.pow((v1[i] - v2[i]), 2);
-                distance += temp;
+        double []count_ditance = new double [34];
+        int t = 0;
+        for(int x = 0;x < num.length;x++){
+            for (int y = 0; y < num[n].length; y++) {
+                if(x != n){
+                    double temp = Math.pow((num[n][y] - num[x][y]), 2);
+                    distance += temp;
+                    count_ditance[t] = distance;
+                    t++;
+                }
             }
-            distance = Math.sqrt(distance);
         }
+        for(int i = 0;i < count_ditance.length;i++){
+                count_ditance[i] = Math.sqrt(count_ditance[i]);
+        }
+        String Str = "";
         NumberFormat numberFormat = NumberFormat.getNumberInstance();
         numberFormat.setMaximumFractionDigits(2);
-        String result = numberFormat.format(distance);
-        return result;
-
+        for(int i = 0; i < count_ditance.length;i++){
+            String result = numberFormat.format(count_ditance[i]);
+            Str += result + "%"+ " ";
+        }
+        return Str;
     }
 }
