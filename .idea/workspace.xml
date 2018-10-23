@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c820ce1-8749-49b5-b1cc-452359dc3975" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/file/lz01_MOD.xls" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/jxl-2.6.12.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/model/ReadExcelImpl.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_7.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Analyse/controller/IndexViewController.class" afterPath="$PROJECT_DIR$/out/production/Analyse/controller/IndexViewController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Analyse/model/Main.class" afterPath="$PROJECT_DIR$/out/production/Analyse/model/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Analyse/view/IndexView.fxml" afterPath="$PROJECT_DIR$/out/production/Analyse/view/IndexView.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/controller/IndexViewController.java" afterPath="$PROJECT_DIR$/src/controller/IndexViewController.java" />
-      <change beforePath="$PROJECT_DIR$/src/model/Main.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/view/IndexView.fxml" afterPath="$PROJECT_DIR$/src/view/IndexView.fxml" />
-    </list>
+    <list default="true" id="6c820ce1-8749-49b5-b1cc-452359dc3975" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -491,16 +479,15 @@
       <workItem from="1539773358954" duration="3676000" />
       <workItem from="1540220998012" duration="152000" />
       <workItem from="1540221168600" duration="55000" />
-      <workItem from="1540221253229" duration="12962000" />
+      <workItem from="1540221253229" duration="13018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18050000" />
+    <option name="totallyTimeSpent" value="18106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="163" y="133" width="1074" height="904" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -515,7 +502,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40600777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40600777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24979322" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
