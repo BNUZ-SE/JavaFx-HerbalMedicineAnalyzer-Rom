@@ -31,17 +31,11 @@ interface FilePathService {
     String getFileName();
 }
 
-interface AlgorithmService {
-    //TODO 获取选取的算法信息以及调用算法 返回结果信息
-    ArrayList getResultDatas();
-
-}
 interface DatasAnalyseService {
     //TODO 传一个二维数组data进去根据组的ID去和其他组匹配 返回与每个组的匹配度
     void doAnalyse(double[][] data, int id);
     ArrayList getResultDatas();
 }
-
 /*
  *
  *
@@ -50,9 +44,10 @@ interface DatasAnalyseService {
  * */
 public class Main extends Application {
     private Stage stage;
-    private int algorithmValue;
-    private int chartValue;
+    private int columnId;
     private double[][] datas = null;
+    public IndexViewController indexView;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
@@ -65,7 +60,7 @@ public class Main extends Application {
     //进入首页
     public void goToIndexView() {
         try {
-            IndexViewController indexView = (IndexViewController) replaceSceneContent("../view/IndexView.fxml");
+            this.indexView = (IndexViewController) replaceSceneContent("../view/IndexView.fxml");
             indexView.setApp(this);
         } catch(Exception e) {
             System.out.println(e);
@@ -81,23 +76,40 @@ public class Main extends Application {
         }
     }
 
-    //实现切换算法
-    public void onChangeAlgorithm(int algorithmValue) {
+
+    //实现切换原始样本ID
+    public void onChangeColumnId(int columnId) {
         try {
-            this.algorithmValue = algorithmValue;
+             this.columnId = columnId;
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    //实现切换图表样式
-    public void onChangeChart(int chartValue) {
+    //实现分析数据
+    public void onAnalyseAction(int algorithmValue) {
         try {
-            this.chartValue = chartValue;
-        } catch (Exception e) {
+            EuclideanMetric euclideanMetric = new EuclideanMetric();
+            euclideanMetric.doAnalyse(this.datas, this.columnId);
+            CosSimiler cosSimiler = new CosSimiler();
+            cosSimiler.doAnalyse(this.datas, this.columnId);
+            Pearson pearson = new Pearson();
+            pearson.doAnalyse(this.datas, this.columnId);
+            if(algorithmValue == 0) {
+                indexView.fetchChart(cosSimiler.getResultDatas(), this.columnId );
+                indexView.fetchTable(cosSimiler.getResultDatas(), this.columnId );
+            } else if (algorithmValue == 1) {
+                indexView.fetchChart(euclideanMetric.getResultDatas(), this.columnId );
+                indexView.fetchTable(euclideanMetric.getResultDatas(), this.columnId );
+            } else if(algorithmValue == 2) {
+                indexView.fetchChart(pearson.getResultDatas(), this.columnId);
+                indexView.fetchTable(pearson.getResultDatas(), this.columnId);
+            }
+        } catch(Exception e) {
             System.out.println(e);
         }
     }
+
 
     //切换舞台 控制器
     Initializable replaceSceneContent(String fxml) throws Exception {

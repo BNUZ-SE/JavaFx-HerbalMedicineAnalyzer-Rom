@@ -3,34 +3,60 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.IndexViewController">
    <children>
-      <Text fill="#0abdff" layoutX="63.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="元素分析" wrappingWidth="122.98307228088379" />
-      <JFXButton layoutX="180.0" layoutY="96.0" onAction="#onChooseFileClick" ripplerFill="#2ee3ff" text="选择文件" />
-      <Text fx:id="fileName" layoutX="21.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="...请选择文件" textAlignment="RIGHT" wrappingWidth="147.9830722808838" />
-      <JFXRadioButton layoutX="393.0" layoutY="101.0" style="-fx-font-size: 16;" text="欧氏距离">
+      <Text fill="#2ec623" layoutX="354.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" text="元素分析" wrappingWidth="191.0000067204237" />
+      <JFXButton buttonType="RAISED" layoutX="168.0" layoutY="91.0" onAction="#onChooseFileClick" prefHeight="35.0" prefWidth="93.0" ripplerFill="#ffffffde" text="选择文件">
+         <font>
+            <Font size="16.0" />
+         </font></JFXButton>
+      <Text fx:id="fileName" layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="...请选择文件" textAlignment="RIGHT" wrappingWidth="147.9830722808838" />
+      <JFXRadioButton layoutX="273.0" layoutY="100.0" selected="true" style="-fx-font-size: 16;" text="余弦相似度">
          <toggleGroup>
             <ToggleGroup fx:id="methodGroup" />
          </toggleGroup></JFXRadioButton>
-      <JFXRadioButton layoutX="504.0" layoutY="101.0" style="-fx-font-size: 16;" text="皮尔逊相关度系数" toggleGroup="$methodGroup" />
-      <JFXButton layoutX="783.0" layoutY="96.0" ripplerFill="#2cc0ff" text="开始分析" />
-      <JFXComboBox layoutX="691.0" layoutY="97.0" />
-      <LineChart layoutX="31.0" layoutY="144.0">
+      <JFXRadioButton layoutX="393.0" layoutY="99.0" style="-fx-font-size: 16;" text="欧氏距离" toggleGroup="$methodGroup" />
+      <JFXButton buttonType="RAISED" layoutX="792.0" layoutY="98.0" onAction="#onAnalyseClick" ripplerFill="WHITE" text="开始分析" />
+      <JFXComboBox fx:id="ColumnIdSelect" layoutX="657.0" layoutY="96.0" />
+      <BarChart fx:id="bc" animated="false" layoutX="14.0" layoutY="140.0" prefHeight="401.0" prefWidth="579.0">
         <xAxis>
-          <CategoryAxis side="BOTTOM" />
+          <CategoryAxis side="BOTTOM" fx:id="xAxis" />
         </xAxis>
         <yAxis>
-          <NumberAxis side="LEFT" />
+          <NumberAxis fx:id="yAxis" side="LEFT" />
         </yAxis>
-      </LineChart>
-      <PieChart layoutX="362.0" layoutY="128.0" />
+      </BarChart>
+      <TableView fx:id="tv" layoutX="603.0" layoutY="140.0" prefHeight="375.0" prefWidth="283.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="105.0" text="ID" />
+          <TableColumn fx:id="similarColumn" prefWidth="176.0" text="相似度 %" />
+        </columns>
+      </TableView>
+      <Text fill="#2ec623" layoutX="208.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" text="最相似的是：" wrappingWidth="191.0000055730343">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Text>
+      <Text fx:id="resultName" fill="RED" layoutX="406.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="131.2060546875">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Text>
+      <Text fx:id="resultPercent" fill="RED" layoutX="537.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="131.2060546875">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Text>
+      <JFXRadioButton layoutX="499.0" layoutY="99.0" style="-fx-font-size: 16;" text="皮尔逊算法" toggleGroup="$methodGroup" />
    </children>
 </AnchorPane>
